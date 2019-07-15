@@ -30,10 +30,7 @@ namespace LojaDeBebidasOnline
             Console.WriteLine("Qual tipo de Bebida você gostaria de comprar?");
             Console.WriteLine("1 - Bebidas alcólicas.");
             Console.WriteLine("2 - Sair do sistema.");
-            Console.ReadKey();
-
-            VerificaIdade();
-
+            
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
 
             return opcao;
