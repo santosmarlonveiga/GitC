@@ -11,7 +11,7 @@ namespace AdicionandoValoresEmUmaLista
         static void Main(string[] args)
         {
             //Criação da nossa lista o.0
-            string[,] listaDeNome = new string[10, 2];
+            string[,] listaDeNome = new string[2, 2];
             //Aqui vamos criar uma forma exteerna de identificar nossos registros
             int IdParaLista = 0;
             //chamada no nosso metodo para inserir registro passando por meio de referencia 
@@ -36,8 +36,8 @@ namespace AdicionandoValoresEmUmaLista
             {
                 //Aqui definimos que o mesmo deve continuar para o próximo registro 
                 //pois esse registro já esta ocupado
-                /* if (listaDeNome[i, 0] != null)
-                     continue;*/
+                if (listaDeNome[i, 0] != null)
+                     continue;
                 //indicamos que ele deve apenas informar o nome do nosso registro
                 Console.WriteLine("\r\nInforma um nome para adicionar um registro:");
                 var nome = Console.ReadLine();
