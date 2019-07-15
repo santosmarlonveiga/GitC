@@ -31,6 +31,19 @@ namespace CriacaoDeLista
                 Console.WriteLine(item);//aqui apresentamos as informações na tela
             }
             Console.ReadKey();
+
+            for (int i = 0; i < lista.Length; i++)
+            {
+                lista[i] = string.Empty;//aqui limpamos o nosso valor dentro da coleção
+            }
+
+            //laço de repetição que usamos para varrer nossa lista de maneira mais simples
+            foreach (var item in lista)//"var item" idica a unidade da nossa lista
+                                       //"in lista" indica a lista que desejamos varrer
+            {
+                Console.WriteLine(item);//aqui apresentamos as informações na tela
+            }
+            Console.ReadKey();
         }
     }
 }
