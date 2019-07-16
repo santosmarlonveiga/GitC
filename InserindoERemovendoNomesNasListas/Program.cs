@@ -31,7 +31,7 @@ namespace InserindoERemovendoNomesNasListas
                     case "2": { RemoverInformacoes(ref baseDeDados); } break;
                     //Lista as informações da lista
                     case "3": { MostrarInformacoes(baseDeDados); } break;
-                    //Menu que mostra apenas registros desativados do sistema 
+                    //Menu que mostra apenas registros desativados do sistema
                     case "4": { MostrarInformacoes(baseDeDados, "true"); } break;
                     //Sai do nosso sistema
                     case "5":
@@ -80,6 +80,7 @@ namespace InserindoERemovendoNomesNasListas
             Console.WriteLine("Informe a idade");
             //Aqui pegamos a idade da pessoa digitada pelo usuario do sistema
             var idade = Console.ReadLine();
+
             //Aumenta o tamanho da nossa lista quando chegou no limite.
             AumentaTamanhoLista(ref baseDeDados);
 
@@ -95,7 +96,7 @@ namespace InserindoERemovendoNomesNasListas
                 baseDeDados[i, 1] = nome;
                 //carregamos na terceira coluna o valor da idade
                 baseDeDados[i, 2] = idade;
-                //Carrega a coluna que identifica se os registros estão ativos
+                //Carrega a coluna que indentifica se o registro está ativo
                 baseDeDados[i, 3] = "true";
                 //Identificamos agora a data e hora de criação dos registros dentro do sistema
                 baseDeDados[i, 4] = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
@@ -112,7 +113,8 @@ namespace InserindoERemovendoNomesNasListas
         /// Mostra as informações dentro da nossa lista de dados"base de dados"
         /// </summary>
         /// <param name="baseDeDados">base de dados para a leitura e mostrar pro usuario</param>
-        /// <param name="mostrarRegistroNAtivos">Quando identificamos com o valor "true", o mesmo mostra os valores que não estão ativos dentro do sistema</param>
+        /// <param name="mostrarRegistroNAtivos"> Quando identificado com o valor true, o mesmo
+        /// mostra os valores que não estão ativos dentro do sistema.</param>
         public static void MostrarInformacoes(string[,] baseDeDados, string mostrarRegistroNAtivos = "false")
         {
             //informamos em que tela o mesmo esta
@@ -123,14 +125,13 @@ namespace InserindoERemovendoNomesNasListas
             //Laço simples aonde o mesmo mostra de maneira formatada as informações 
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
-                //Aqui deixamos de mostrar  as informações que foram desabilitadas dentro do sistema.
-                if(baseDeDados[i, 3] != mostrarRegistroNAtivos)
-                Console.WriteLine($"ID {baseDeDados[i, 0]} " +
-                    $"- Nome:{baseDeDados[i, 1]} " +
-                    $"- Idade:{baseDeDados[i, 2]}" +
-                    $"- Data de Alteração:{baseDeDados[i, 4]}");
-
-        }
+                //Aqui deixamos de mostrar as informações que foram desabilitadas dentro do sistema.
+                if (baseDeDados[i, 3] != mostrarRegistroNAtivos)
+                    Console.WriteLine($"ID {baseDeDados[i, 0]} " +
+                          $"- Nome:{baseDeDados[i, 1]} " +
+                          $"- Idade:{baseDeDados[i, 2]}" +
+                          $"- Data Alteração:{baseDeDados[i, 4]}");
+            }
 
             //Finalizamos a operação e indicamos que não existe mais operações a serem realizadas em
             //nosso metodo.
@@ -150,6 +151,7 @@ namespace InserindoERemovendoNomesNasListas
             //escolha do id corretamente
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
+                //Identifica que so deve remover os valores ativos dentro do sistema
                 if (baseDeDados[i, 3] != "false")
                     Console.WriteLine($"ID:{baseDeDados[i, 0]} " +
                           $"- Nome:{baseDeDados[i, 1]} " +
@@ -164,9 +166,9 @@ namespace InserindoERemovendoNomesNasListas
                 //Colocamos um "&&" pois a comparação de um valor string com um valor null 
                 //pode gerar erro.
                 if (baseDeDados[i, 0] != null && baseDeDados[i, 0] == id)
-                {  //Agora trocamos este valor para um identificador string false
+                {  //Agora trocamos este valor para um identificador string "false"
                     baseDeDados[i, 3] = "false";
-                    //Aqui indicamos que foi alterado esse registro
+                    //Aqui indicamos a data que foi alterado esse registro.
                     baseDeDados[i, 4] = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
                 }
             }
@@ -207,7 +209,7 @@ namespace InserindoERemovendoNomesNasListas
                     baseDeDados[i, 1] = listaCopia[i, 1];
                     //A informação da idade foi atualizada
                     baseDeDados[i, 2] = listaCopia[i, 2];
-                    //Identificador se o registros está ativo
+                    //Identificador se o registro esta ativo
                     baseDeDados[i, 3] = listaCopia[i, 3];
                     //Data da alteração deste registro
                     baseDeDados[i, 4] = listaCopia[i, 4];
