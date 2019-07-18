@@ -1,1 +1,1 @@
-﻿select * from SacolaDaCooper
+﻿drop table SacolaDaCooper;
