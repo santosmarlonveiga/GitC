@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="deion" content="">
+    <meta name="author" content="Cristopher">
+    <meta name="generator" content="">
+    <title>Sistema Marlon pra nada</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .acessibilidade {
+            font-size: 16px;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.3/examples/sign-in/signin.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+</head>
+<body class="text-center">
+    <div class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal acessibilidade">Sistema Marlon pra nada</h1>
+        <label for="inputLogin" class="sr-only acessibilidade">Login</label>
+        <input id="inputLogin" class="form-control acessibilidade" placeholder="Login">
+        <label for=";" class="sr-only acessibilidade">Senha</label>
+        <input type="password" id="inputPassword" class="form-control acessibilidade" placeholder="Senha">
+        <button class="btn btn-lg btn-success btn-block acessibilidade" onclick="LoginEntrar()">Entrar</button>
+        <button class="btn btn-sm btn-primary btn-block acessibilidade" onClick="fonte('a');">Aumentar Fonte</button>
+        <button class="btn btn-sm btn-warning btn-block acessibilidade" onclick="fonte('d');">Diminuir Fonte</button>
+    </div>
+    <script>
+        function fonte(e) {
+            var elemento = $(".acessibilidade");
+            var fonte = elemento.css('font-size');
+            if (e == 'a') {
+                elemento.css("fontSize", parseInt(fonte) + 1);
+            } else if ('d') {
+                elemento.css("fontSize", parseInt(fonte) - 1);
+            }
+        }
+        var foo = { login: "admin", senha: "admin" };
+
+        var entrarLogin = Object.create(foo);
+        entrarLogin.login;
+        entrarLogin.senha;
+        entrarLogin.data = [
+            {
+                "Id": 1,
+                "Login": "admin",
+                "Senha": "admin"
+            }];
+
+        function LoginEntrar() {
+            $.each(entrarLogin.data,
+                function (index, object) {
+                    var contentVal = $('#inputLogin').val();
+                    var contentSenha = $('#inputPassword').val();
+
+                    if (object.Login === contentVal && object.Senha === contentSenha) {
+                        alert('Voc� entrou')
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

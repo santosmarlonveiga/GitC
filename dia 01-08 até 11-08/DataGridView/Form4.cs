@@ -69,7 +69,7 @@ namespace DataGridView
             frmAdicionarVendas formAddVendas = new frmAdicionarVendas();
             formAddVendas.ShowDialog();
 
-            if(formAddVendas.vendasRow?.Carro > 0 && formAddVendas.vendasRow?.Valor > 0)
+            .
 
             this.vendasTableAdapter.Insert(
                 formAddVendas.vendasRow.Carro,

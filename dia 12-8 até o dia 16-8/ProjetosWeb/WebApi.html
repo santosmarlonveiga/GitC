@@ -1,0 +1,46 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sistema Api</title>
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/hemisu-light.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet" media="screen">
+    <link id="style" href="css/classic.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <div>
+        <form id="formUsu" method="post">
+            <input type="text" name="tbxusuario" placeholder="Informar nome do usuario"/>
+            <input type="submit" value="Cadastrar" />
+        </form>
+    </div>
+    <div id="exemplo">
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--jquery.columns.min.js-->
+    <script type="text/javascript" src="jquery.columns.min.js"></script>
+
+
+    <script>
+        function CadastrarUsuario() {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:57618/Api/Usuarios',
+                data: JSON.stringify($('#formUsu').serializeArray()),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json'
+            });
+        }
+
+        function GridRefresh() {
+            $.get('http://localhost:57618/Api/Values', function (dataApi) {
+                $('#exemplo').columns({ data: dataApi });
+            });
+        }
+    </script>
+
+</body>
+</html>
