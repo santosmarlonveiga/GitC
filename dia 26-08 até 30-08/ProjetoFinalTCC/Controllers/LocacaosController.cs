@@ -81,8 +81,9 @@ namespace ProjetoFinalTCC.Controllers
             }
             
            
-            var automovel = db.TiposDeTransportes;
-            if (locacao.CodTipoDeVeiculo == automovel.FirstOrDefault(x => x.Descricao == "Automovel").Codigo)
+            var veiculo = db.TiposDeTransportes;
+            if (locacao.CodTipoDeVeiculo == veiculo.FirstOrDefault(x => x.Descricao == "Automovel").Codigo 
+                || locacao.CodTipoDeVeiculo == veiculo.FirstOrDefault(x => x.Descricao == "Moto").Codigo)
             {
                 var marcaVeiculo = db.MarcasVeiculos.FirstOrDefault(x => x.Codigo == locacao.CodMarca);
                 if (marcaVeiculo == null)
@@ -103,41 +104,13 @@ namespace ProjetoFinalTCC.Controllers
                 if(!verificaPlaca)
                     return BadRequest("O campo Placa está vazio");
 
-                var aceitaTermo = db.Locacaos.FirstOrDefault(x => x.AceitaTermo == true);
-                if (locacao.AceitaTermo != true)
-                    return BadRequest("Para realizar a locação, você deve aceitar os termos de uso");
+                
             }
-            
+            var aceitaTermo = db.Locacaos.FirstOrDefault(x => x.AceitaTermo == true);
+            if (locacao.AceitaTermo != true)
+                return BadRequest("Para realizar a locação, você deve aceitar os termos de uso");
 
-            var moto = db.TiposDeTransportes;
-            if (locacao.CodTipoDeVeiculo == moto.FirstOrDefault(x => x.Descricao == "Moto").Codigo)
-            {
-                var marcaVeiculo = db.MarcasVeiculos.FirstOrDefault(x => x.Codigo == locacao.CodMarca);
-                if (marcaVeiculo == null)
-                    return BadRequest("O campo Codigo da Marca está incorreto");
-
-                var modeloVeiculo = db.ModelosVeiculos.FirstOrDefault(x => x.Id == locacao.CodModelo);
-                if (modeloVeiculo == null)
-                    return BadRequest("O campo Código do Modelo está incorreto");
-
-                var cores = db.Cores.FirstOrDefault(x => x.Codigo == locacao.CodCor);
-                if (cores == null)
-                    return BadRequest("O campo Código da Cor está incorreto");
-
-                var verificaPlaca = true;
-                if (locacao.PlacaCarro == null)
-                    verificaPlaca = false;
-
-                if (!verificaPlaca)
-                    return BadRequest("O campo Placa está vazio");
-
-                var aceitaTermo = db.Locacaos.FirstOrDefault(x => x.AceitaTermo == true);
-                if (locacao.AceitaTermo != true)
-                    return BadRequest("Para realizar a locação, você deve aceitar os termos de uso");
-
-            }
            
-
 
 
             db.Locacaos.Add(locacao);

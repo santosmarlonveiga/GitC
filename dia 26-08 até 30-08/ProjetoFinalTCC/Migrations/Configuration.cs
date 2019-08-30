@@ -24,7 +24,7 @@
                 new TiposDeTransporte(){Codigo = 0,Descricao = "Automovel"},
                 new TiposDeTransporte(){Codigo = 1,Descricao = "Moto"},
                 new TiposDeTransporte(){Codigo = 2,Descricao = "Bicicleta"},
-                new TiposDeTransporte(){Codigo = 3,Descricao = "Patinete"},
+                new TiposDeTransporte(){Codigo = 2,Descricao = "Patinete"},
                 };
 
             TiposDeTransporte.ForEach(s => context.TiposDeTransportes.AddOrUpdate(p => p.Descricao, s));

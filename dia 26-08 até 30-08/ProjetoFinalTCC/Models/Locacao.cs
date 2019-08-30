@@ -20,6 +20,6 @@ namespace ProjetoFinalTCC.Models
         public int CodPeriodoLoc { get; set; }
         public int CodColaborador { get; set; } = 1;
         public bool AceitaTermo { get; set; }
-        public int Status { get; set; }
+        public int Status { get; set; } = 1; //1 = Em Aprovação
     }
 }
