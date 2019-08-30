@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="WpfApp1.Views.ucCalculadora"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.Views"
+             mc:Ignorable="d" Height="449.1" Width="797.95">
+    <Grid Margin="0,0,0.4,0.6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="328*"/>
+            <RowDefinition Height="121*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="371*"/>
+            <ColumnDefinition Width="429*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="1" HorizontalAlignment="Left" Margin="14,183,0,0" Name="um" VerticalAlignment="Top" Width="75" Click="um_Click" FontSize="20" Height="30"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="14,218,0,0" Name="dois" VerticalAlignment="Top" Width="75" Click="dois_Click" FontSize="20" Height="30"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="14,253,0,0" Name="tres" VerticalAlignment="Top" Width="75" Click="tres_Click" FontSize="20" Height="30"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="14,289,0,0" Name="zero" VerticalAlignment="Top" Width="168" Click="zero_Click" Height="40" FontSize="20" Grid.RowSpan="2"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="107,183,0,0" Name="quatro" VerticalAlignment="Top" Width="75" Click="quatro_Click" FontSize="20" Height="30"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="107,218,0,0" Name="cinco" VerticalAlignment="Top" Width="75" Click="cinco_Click" FontSize="20" Height="30"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="107,253,0,0" Name="seis" VerticalAlignment="Top" Width="75" Click="seis_Click" FontSize="20" Height="30"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="295,117,0,0" Name="soma" VerticalAlignment="Top" Width="76" Click="soma_Click" Height="166" FontSize="20"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="198,183,0,0" Name="sete" VerticalAlignment="Top" Width="75" Click="sete_Click" FontSize="20" Height="30"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="198,218,0,0" Name="oito" VerticalAlignment="Top" Width="75" Click="oito_Click" FontSize="20" Height="30"/>
+        <Button Content="9" HorizontalAlignment="Left" Margin="198,253,0,0" Name="nove" VerticalAlignment="Top" Width="75" Click="nove_Click" FontSize="20" Height="30"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="14,117,0,0" Name="subtracao" VerticalAlignment="Top" Width="76" Click="subtracao_Click" Height="54" RenderTransformOrigin="-0.499,0.193" FontSize="20" Background="#FFCDCBCB"/>
+        <Button Content="=" HorizontalAlignment="Left" Margin="198,289,0,0" Name="igual" VerticalAlignment="Top" Width="173" Click="igual_Click" Height="40" FontSize="20" Grid.RowSpan="2"/>
+
+        <Button Content="/" HorizontalAlignment="Left" Margin="107,117,0,0" Name="divisao" VerticalAlignment="Top" Width="75" Click="divisao_Click" Height="53" FontSize="20"/>
+        <Button Content="*" HorizontalAlignment="Left" Margin="198,117,0,0" Name="multipicacao" VerticalAlignment="Top" Width="75" Click="multiplicacao_Click" Height="53" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="102" Margin="10,10,0,0" Name="display" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="360"/>
+    </Grid>
+</UserControl>

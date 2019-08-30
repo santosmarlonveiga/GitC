@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstMPFApp", "MyFirstMPFApp.csproj", "{4E04C73E-E106-4F66-9BDF-9061F9A4AA45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E04C73E-E106-4F66-9BDF-9061F9A4AA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E04C73E-E106-4F66-9BDF-9061F9A4AA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E04C73E-E106-4F66-9BDF-9061F9A4AA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E04C73E-E106-4F66-9BDF-9061F9A4AA45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69728AD7-7B4E-4426-8AE4-DCB26962D3B0}
+	EndGlobalSection
+EndGlobal
